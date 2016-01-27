@@ -11,3 +11,7 @@ IDE PyCharm versão 4.5.4 (https://www.jetbrains.com/pycharm/download/ )
 Para executar a aplicação
 
 Na IDE PyCharm abra o projeto (File --> Open... --> Navegue até o Projeto), e rode a aplicação ( botão direito no arquivo "Application" --> Run 'Application').
+
+Para jogar:
+Utilizar as setas para movimentar player ; 
+Tecla "c" para atirar;
