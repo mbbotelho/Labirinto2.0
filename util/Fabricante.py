@@ -3,6 +3,7 @@ from Diretor import *
 from Builder import *
 
 class Fabricante(Diretor):
+
     def cria_inimigo(self,builder):
         builder.preparar_imagem()
         builder.prepara_pontuacao()

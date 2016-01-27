@@ -15,9 +15,7 @@ class DaoJogada:
             cur.executescript("CREATE TABLE IF NOT EXISTS Jogada(Id_Nivel INTEGER, id_pessoa INTEGER, tempo INTEGER);")
             self.conexao.commit()
 
-            #for linha in cur.fetchall():
-             #   print(linha)
-              #  self.conexao.commit()
+
 
         except sqlite3.Error:
             if self.conexao:
@@ -36,8 +34,7 @@ class DaoJogada:
             print("tempo,pessoa,nivel",lista)
 
             if jogada_banco !=None:
-                if jogada.tempo < jogada_banco[2]:### refazer
-                    print("entrei")
+                if jogada.tempo < jogada_banco[2]:
                     cur.execute(""" UPDATE Jogada SET tempo = ? WHERE id_pessoa = ? and id_nivel = ?""",lista)
 
             else:
@@ -45,7 +42,6 @@ class DaoJogada:
 
             cur.execute("SELECT * FROM Jogada")
             for linha in cur.fetchall():
-                print("linha1",linha)
                 self.conexao.commit()
 
 
@@ -65,11 +61,20 @@ class DaoJogada:
                     print("linha",linha)
                     lista_record.append(linha)
                     self.conexao.commit()
-            print(lista_record)
+            print("lista_record",lista_record)
             return lista_record
 
         except sqlite3.Error as erro:
             print("Erro no banco de dados: ", erro)
+
+    def imprimir_jogadas(self):
+        cur = self.conexao.cursor()
+        cur.execute("""SELECT * FROM jogada""")
+        print(cur.fetchall())
+        for linha in cur.fetchall():
+            print(linha)
+            self.conexao.commit()
+
 
     def fechar_conexao(self):
         if self.conexao:

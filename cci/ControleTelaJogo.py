@@ -118,7 +118,6 @@ class ControleTelaJogo:
 
         # se a tecla 5 (tecla C) pressionada, ele cria um tiro e adiciona um tiro na lista de tiros
         # e uma direcao na lista de direcoes
-
         if self.teclado.teclas[5]:
             labirinto.lst_tiros.append(Tiro().criar_tiro((labirinto.player.rect_player[0],labirinto.player.rect_player[1])))
             labirinto.lst_direcao_tiro.append(labirinto.player.direcao)

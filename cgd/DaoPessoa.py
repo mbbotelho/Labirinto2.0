@@ -28,7 +28,6 @@ class DaoPessoa():
             cur.execute("SELECT * FROM pessoa")
 
             for linha in cur.fetchall():
-                print(linha)
                 self.conexao.commit()
             return True
 
@@ -38,11 +37,10 @@ class DaoPessoa():
 
     def logar_pessoa(self,login_senha):
         try:
-            print(login_senha)
             c=self.conexao.cursor()
             c.execute("""SELECT * FROM pessoa WHERE login = ? and senha = ?""",login_senha)
             pessoa=c.fetchone()
-            print(pessoa)
+
 
 
             if pessoa == None:
@@ -57,16 +55,14 @@ class DaoPessoa():
 
     def salvar_labirinto(self,id_pessoa,labirinto):
         lista=[labirinto,id_pessoa]
-        print(lista)
         c=self.conexao.cursor()
         c.execute(""" UPDATE Pessoa SET labirinto_salvo = ? WHERE id_pessoa = ?""",lista)
 
     def retorna_nome(self,id_pessoa):
         try:
             c=self.conexao.cursor()
-            c.execute("""SELECT * FROM pessoa WHERE id_pessoa=?""",[id_pessoa])
+            c.execute("SELECT * FROM pessoa WHERE id_pessoa=?",[id_pessoa])
             pessoa=c.fetchone()
-            print(pessoa)
 
             if pessoa != None:
                 return pessoa[1]

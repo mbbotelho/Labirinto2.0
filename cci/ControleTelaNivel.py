@@ -8,9 +8,7 @@ class ControleTelaNivel:
         self.teclado=ControleTeclado()
 
     def controle_tela_nivel(self,opcao):
-        print(opcao,"opcao passada para nivel")
         self.opcao=opcao
-        print(self.opcao,"self.opcao recebida por nivel")
         self.teclado.captura_evento()
         self.cima,self.baixo,self.esc,self.espaco=0,1,4,6
         self.background,self.facil,self.medio,self.dificil,self.voltar,self.cursor=0,1,2,3,4,5

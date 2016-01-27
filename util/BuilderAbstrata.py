@@ -1,7 +1,8 @@
 __author__ = 'Michelle'
 from cdp.Inimigo import *
+from util.Builder import *
 
-class BuilderAbstrata:
+class BuilderAbstrata(Builder):
 
     def __init__(self,fabrica):
         self.fabrica = fabrica

@@ -40,7 +40,7 @@ class ControlePrincipal:
         self.controle_creditos=ControleTelaCreditos()
         self.creditos=CriaTelaCreditos()
 
-        self.pessoa_logada=Pessoa(0,'')
+        self.pessoa_logada=Pessoa(-1,'')
         self.nivel_escolhido=''
 
         self.apl_gerencia_jogada = AplGerenciaJogada()
@@ -75,10 +75,9 @@ class ControlePrincipal:
 
             if self.opcao==1:
                 self.main_clock.tick(17)
-                self.controle_login.controla_imagens_login(self.janela,self.lista_login_senha,self.opcao)
-
-
+                self.pessoa_logada=self.controle_login.controla_imagens_login(self.janela,self.lista_login_senha,self.opcao)
                 self.opcao=self.controle_login.opcao
+
 
             elif self.opcao==2:
                 self.main_clock.tick(17)

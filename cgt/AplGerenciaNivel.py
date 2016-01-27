@@ -7,7 +7,6 @@ class AplGerenciaNivel:
         dao_nivel = DaoNivel()
         dao_nivel.iniciar_conexao()
         id_nivel=dao_nivel.retorna_id(nome_nivel)
-        print(id_nivel)
         dao_nivel.fechar_conexao()
         return id_nivel
 

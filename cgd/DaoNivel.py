@@ -31,7 +31,6 @@ class DaoNivel:
             cur.execute("SELECT * FROM Nivel")
 
             for linha in cur.fetchall():
-                print(linha)
                 self.conexao.commit()
 
        except sqlite3.IntegrityError:

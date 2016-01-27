@@ -31,7 +31,7 @@ class AplGerenciarPessoa:
         print(pessoa_banco)
         if pessoa_banco !=None:
             pessoa=Pessoa(pessoa_banco[ID],pessoa_banco[NOME])
-            print(pessoa.id)
+            print(pessoa.id,pessoa.nome)
             return pessoa
         else:
             return pessoa_banco
@@ -47,8 +47,10 @@ class AplGerenciarPessoa:
         dao_pessoa = DaoPessoa()
         nome=dao_pessoa.retorna_nome(id_pessoa)
         dao_pessoa.fechar_conexao()
-        print(nome)
         return nome
+
+
+
 
 
 

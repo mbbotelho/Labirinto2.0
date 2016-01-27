@@ -30,9 +30,9 @@ class ControleTelaMenu:
                 return self.opcao
 
             elif self.posicao_imagens_menu[self.cursor][self.altura]==self.posicao_imagens_menu[self.record][self.altura]: # se a posicao altura do cursor for a mesma que o botao record
-                #self.opcao=7
-                #return self.opcao
-                 return
+                self.opcao=7
+                return self.opcao
+
 
             elif self.posicao_imagens_menu[self.cursor][self.altura]==self.posicao_imagens_menu[self.creditos][self.altura]: # se a posicao altura do cursor for a mesma que o botao creditos
                 self.opcao=6

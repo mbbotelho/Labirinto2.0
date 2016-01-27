@@ -19,5 +19,12 @@ class AplGerenciaJogada:
         dao_Jogada.fechar_conexao()
         return lista_jogada
 
+    def imprime_jogada(self):
+        dao_Jogada = DaoJogada()
+        dao_Jogada.inciar_conexao()
+        dao_Jogada.imprimir_jogadas()
+        dao_Jogada.fechar_conexao()
+
+
 
 
